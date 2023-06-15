@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Screen2_2_a extends StatelessWidget {
-  const Screen2_2_a({super.key});
+class Bukgu4 extends StatelessWidget {
+  const Bukgu4({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class Screen2_2_a extends StatelessWidget {
         ),
       ),
       body: const Center(
-        child: Text('접수안내'),
+        child: Text('일일입장 안내'),
       ),
     );
   }

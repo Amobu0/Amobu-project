@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:sideproject/screens/screen2_1/screen2_1_a.dart';
-import 'package:sideproject/screens/screen2_1/screen2_1_b.dart';
-import 'package:sideproject/screens/screen2_2/screen2_2_a.dart';
-import 'package:sideproject/screens/screen2_2/screen2_2_b.dart';
-import 'package:sideproject/screens/screen2_3/screen2_3_a.dart';
+import 'package:sideproject/screens/busan/bukgu/bukgu2.dart';
+import 'package:sideproject/screens/busan/bukgu/bukgu4.dart';
+import 'package:sideproject/screens/busan/bukgu/bukgu5.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Screen2 extends StatelessWidget {
-  const Screen2({super.key});
+class BukguMain extends StatelessWidget {
+  const BukguMain({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class Screen2 extends StatelessWidget {
         backgroundColor: Colors.yellow[50],
         centerTitle: true,
         title: const Text(
-          '강서구국민체육센터',
+          '북구국민체육센터',
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
@@ -34,10 +32,19 @@ class Screen2 extends StatelessWidget {
                   flex: 1,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Screen2_1_a(),
+                      showDialog(
+                        context: context,
+                        builder: (context) => const AlertDialog(
+                          title: Text(
+                            textAlign: TextAlign.center,
+                            '운영시간',
+                          ),
+                          content: Text(
+                            '-평일\n06:00 ~ 22:00\n\n-주말, 공휴일\n09:00 ~ 18:00\n\n-휴관\n매월 첫째, 셋째주 수요일',
+                            style: TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
                         ),
                       );
                     },
@@ -60,6 +67,7 @@ class Screen2 extends StatelessWidget {
                           Icon(
                             Icons.timer_outlined,
                             size: 60,
+                            color: Colors.amber,
                           ),
                           Text(
                             '운영시간',
@@ -78,7 +86,7 @@ class Screen2 extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Screen2_1_b(),
+                          builder: (context) => (const Bukgu2()),
                         ),
                       );
                     },
@@ -124,13 +132,12 @@ class Screen2 extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Screen2_2_a(),
-                        ),
-                      );
+                    onTap: () async {
+                      final url =
+                          Uri.parse('https://bukgusports.com/sub/progapp.php');
+                      if (await canLaunchUrl(url)) {
+                        launchUrl(url);
+                      }
                     },
                     child: Container(
                       margin: const EdgeInsets.all(15.0),
@@ -149,11 +156,11 @@ class Screen2 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
-                            Icons.live_help_outlined,
+                            Icons.desktop_windows_outlined,
                             size: 60,
                           ),
                           Text(
-                            '접수안내',
+                            '온라인 접수',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.w600),
                           ),
@@ -169,7 +176,7 @@ class Screen2 extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Screen2_2_b(),
+                          builder: (context) => (const Bukgu4()),
                         ),
                       );
                     },
@@ -218,7 +225,7 @@ class Screen2 extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Screen2_3_a(),
+                          builder: (context) => (const Bukgu5()),
                         ),
                       );
                     },
@@ -259,7 +266,7 @@ class Screen2 extends StatelessWidget {
                   flex: 1,
                   child: GestureDetector(
                     onTap: () async {
-                      final call = Uri.parse('tel: 0517173555');
+                      final call = Uri.parse('tel: 0513657070');
                       if (await canLaunchUrl(call)) {
                         launchUrl(call);
                       }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
-class Screen2_3_a extends StatefulWidget {
-  const Screen2_3_a({super.key});
+class Gangseo5 extends StatefulWidget {
+  const Gangseo5({super.key});
 
   @override
-  State<Screen2_3_a> createState() => _Screen2_3_aState();
+  State<Gangseo5> createState() => _Gangseo5State();
 }
 
-class _Screen2_3_aState extends State<Screen2_3_a> {
+class _Gangseo5State extends State<Gangseo5> {
   late KakaoMapController mapController;
   Set<Marker> markers = {};
 
