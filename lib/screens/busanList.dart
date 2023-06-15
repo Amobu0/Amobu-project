@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sideproject/screens/busan/bukgu/bukgumaind.dart';
+import 'package:sideproject/screens/busan/bukgu/bukgumain.dart';
 import 'package:sideproject/screens/busan/gangseo/gangseomain.dart';
 
 class BusanList extends StatelessWidget {
